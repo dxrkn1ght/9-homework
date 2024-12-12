@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{ sport.event }}</title>
+</head>
+<body>
+    <h1>{{ sport.event }}</h1>
+    <h3>Event: {{ sport.event }}</h3>
+    <h3>Location: {{ sport.location }}</h3>
+    <h3>Release Date: {{ sport.date }}</h3>
+    <h3>Type: {{ sport.type }}</h3>
+    <button type="submit"><a href="{% url 'sports:list' %}">Back to list</a></button>
+    <br>
+    <br>
+    <button><a href="{{ sport.get_delete_url }}">Delete</a></button>
+    <br>
+    <br>
+    <button><a href="{{ sport.get_update_url }}">Update</a></button>
+</body>
+</html>

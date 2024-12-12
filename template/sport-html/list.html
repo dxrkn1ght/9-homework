@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports list</title>
+</head>
+<body>
+    <h1>Sports list</h1>
+    <button type="submit"><a href="{% url 'sports:create' %}">Create Sports</a></button>
+    {% for sport in sports %}
+        <a href="{{ sport.get_detail_url }}"><h3>{{ sport.event }}</h3></a>
+    {% empty %}
+        <h3>No sports</h3>
+    {% endfor %}
+</body>
+</html>

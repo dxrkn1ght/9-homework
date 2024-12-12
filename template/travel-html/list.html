@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sports list</title>
+</head>
+<body>
+    <h1>Travel list</h1>
+    <button type="submit"><a href="{% url 'travel:create' %}">Create Travel</a></button>
+    {% for travel in travels %}
+        <a href="{{ travel.get_detail_url }}"><h3>{{ travel.name }}</h3></a>
+    {% empty %}
+        <h3>No sports</h3>
+    {% endfor %}
+</body>
+</html>

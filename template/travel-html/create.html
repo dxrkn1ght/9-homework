@@ -1,0 +1,25 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Travel Sport</title>
+</head>
+<body>
+    <h1>{% if travel %}Update Travel {% else %} Create Travel {% endif %}</h1>
+    <form method="post">
+        {% csrf_token %}
+        <label for="name">Location</label><br>
+        <input type="text" name="name" id="name"><br>
+        <label for="country">Location</label><br>
+        <input type="text" name="country" id="country"><br>
+        <label for="description">Date</label><br>
+        <textarea id="description" name="description" rows="4" cols="30" required></textarea>
+        <label for="season">Type</label><br>
+        <input type="text" name="season" id="season"><br><br>
+        <button type="submit">{% if travel %}Update{% else %}Create{% endif %}</button>
+    </form>
+    <br>
+    <button type="submit"><a href="{% url 'travel:list' %}">Back to list</a></button>
+</body>
+</html>
